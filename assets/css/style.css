@@ -16,7 +16,13 @@ body {
     
 }
 
-
+.product{
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    background-color: black;
+    padding: 1em;
+}
 
 
 .navbar h1 {
