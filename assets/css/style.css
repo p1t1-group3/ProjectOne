@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: grey;
+    color: blue;
+    line-height: 1.6;
+}
+
+.navbar {
+    background-color: black;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+    
+}
+
+
+
+
+.navbar h1 {
+    
+    text-shadow: 1px 1px 1px white;
+    
+}
+
+.btn  {
+    font-style: italic;
+    background-color: blue;
+    color: white;
+    
+}
+
+#local {
+    /* justify-content: center; */
+}
+
+.locPizza {
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    
+}
+
+.hero {
+    height: 80vh;
+    display: flex;
+    /* padding: 2em; */
+}
+
+.modal-dialog { /* This is the Text at the top of the modal*/
+    color: gray;
+}
+
+.modal-content {
+    
+}
+.jersey-15-regular {
+    font-family: "Jersey 15", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
