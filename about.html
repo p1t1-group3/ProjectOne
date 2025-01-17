@@ -12,12 +12,12 @@
     <h1>Boot camp pizza</h1>
     <nav class = "navbar"> 
         <!-- Button trigger modal -->
-        <button id = "userSignUP" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signUPModal">
+        <button id = "userSignUP" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             sign up
         </button>
         
         <!-- Modal -->
-     <div class="modal fade" id="signUPModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="signUPModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -25,18 +25,26 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                    <form action=""id="customerInfo">
-                        <!-- <input type="text"><span class="customer-name"></span> -->
-        <label for="username">:</label><br>
-        <input type="text" <span class="customer-name">Name:</span>><br><br>
-        <input type="email" <span class="customer-email">Email:</span>>
-        <input type="text" <place-holder>Phone Number</place-holder><span class="customer-number">Phone Number:</span>>
-       <input type="text" <span class="customer-address">Address:</span>>
-         
-     </form>
-
-
-
+                        <h3>sign up</h3>
+                        <form>
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                              </div>
+                              <div class="row g-3 align-items-center">
+                                <div class="col-auto">
+                                  <label for="inputPassword6" class="col-form-label">Password</label>
+                                </div>
+                                <div class="col-auto">
+                                  <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                                </div>
+                                <div class="col-auto">
+                                  <span id="passwordHelpInline" class="form-text">
+                                    Must be 8-20 characters long.
+                                  </span>
+                                </div>
+                              </div>
+                        </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -57,21 +65,29 @@
         </button>
         
         <!-- Modal should this be a dorpdown? -->
-        
+       
     </nav>
-    <main id="menu">
-        <h2>Menu</h2>
-        <div class="container text-center">
-            <div class="row row-cols-3">
-              <div id ="zza" class="col">Pizza</div>
-              <div id = "sZza" class="col">Specaility Pizzas</div>
-              <div id = "wings" class="col">Wings</div>
-              <div class="col">Apperizers</div>
-              <div class="col">Desserts</div>
-              <div class="col">Drinks</div>
-            </div>
-          </div>    
-    </main>
+    <section id="local">
+        <h2>Location</h2>
+        <img src="./assets/images/googMapImage" alt="Google Map Result"></img>
+        <div class="container-fluid">
+            ...
+          </div>
+        </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="container-fluid">
+            ...
+          </div>
+       
+        </section>
+    <section id="image">
+            <img src="./assets/images/pizzaRestaurant" alt="Pizza Restaurant"
+            <div class="container-fluid">
+                ...
+              </div>
+           
+        </section>
     <footer>
         <p id = "G3"> 2025 &copy Project by Group 3</p>
         
