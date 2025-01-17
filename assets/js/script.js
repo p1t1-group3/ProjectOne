@@ -17,18 +17,21 @@ let UpdatedInfo = JSON.parse(localStorage.getItem('customerInfo'));
 
 
 // I have made UpdatedInfo a global variable so that we can update the signUpModalBtn text content with the user's name.
-
-if (UpdatedInfo !== null) {
-  console.log(`You have successfully signed up. Welcome ` + `${UpdatedInfo.Name}`);
-  document.getElementById('userSignUP').textContent = UpdatedInfo.Name + `'s Order History`;
-  document.getElementById('userSignUP').style.fontSize = 'inhert';   
-  signUPModalBtn.addEventListener('click',function(event){
-    window.location.href = 'history.html';
-    // If they have their name saved in local storage, then the Sign Up button changes to a link to their Order History
-  })  
-} else {
-  document.getElementById('userSignUP').textContent = 'Sign Up';
+function updateSignUpButton(){
+  if (UpdatedInfo !== null) {
+    console.log(`You have successfully signed up. Welcome ` + `${UpdatedInfo.Name}`);
+    document.getElementById('userSignUP').textContent = UpdatedInfo.Name + `'s Order History`;
+    document.getElementById('userSignUP').style.fontSize = 'inhert';   
+    signUPModalBtn.addEventListener('click',function(event){
+      window.location.href = 'history.html';
+      // If they have their name saved in local storage, then the Sign Up button changes to a link to their Order History
+    })  
+  } else {
+    document.getElementById('userSignUP').textContent = 'Sign Up';
+  }
 }
+
+updateSignUpButton();
 
 acceptBtn.addEventListener('click',function(event){
   event.preventDefault();
@@ -43,27 +46,23 @@ acceptBtn.addEventListener('click',function(event){
   localStorage.setItem('customerInfo', JSON.stringify(customerInfo));
 
   UpdatedInfo = customerInfo;
-  customerSignUp();
+  updateSignUpButton();
 
 });
 
-function customerSignUp() {
-  
-    console.log(`You have successfully signed up. Welcome ` + `${UpdatedInfo.Name}`);
-    document.getElementById('userSignUP').textContent = UpdatedInfo.Name + `'s Order History`;
-    document.getElementById('userSignUP').style.fontSize = 'inhert';     
-  
-}
+
 
 // Added link to Home Page
 homeBtn.addEventListener('click',function(event){
   event.preventDefault();
+  console.log('Home button clicked');
   window.location.href = 'index.html'
 });
 
 // Added link to About Page
 aboutBtn.addEventListener('click',function(event){
   event.preventDefault();
+  console.log('About button clicked');
   window.location.href = 'about.html'
 })
 
