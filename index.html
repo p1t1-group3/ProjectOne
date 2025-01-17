@@ -12,12 +12,12 @@
     <h1>Boot camp pizza</h1>
     <nav class = "navbar"> 
         <!-- Button trigger modal -->
-        <button id = "userSignUP" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button id = "userSignUP" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signUPModal">
             sign up
         </button>
         
         <!-- Modal -->
-        <div class="modal fade" id="signUPModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal fade" id="signUPModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -25,7 +25,18 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        sign up
+                    <form action=""id="customerInfo">
+                        <!-- <input type="text"><span class="customer-name"></span> -->
+        <label for="username">:</label><br>
+        <input type="text" <span class="customer-name">Name:</span>><br><br>
+        <input type="email" <span class="customer-email">Email:</span>>
+        <input type="text" <place-holder>Phone Number</place-holder><span class="customer-number">Phone Number:</span>>
+       <input type="text" <span class="customer-address">Address:</span>>
+         
+     </form>
+
+
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
