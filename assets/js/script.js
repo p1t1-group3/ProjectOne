@@ -55,14 +55,14 @@ acceptBtn.addEventListener('click',function(event){
 // Added link to Home Page
 homeBtn.addEventListener('click',function(event){
   event.preventDefault();
-  console.log('Home button clicked');
+
   window.location.href = 'index.html'
 });
 
 // Added link to About Page
 aboutBtn.addEventListener('click',function(event){
   event.preventDefault();
-  console.log('About button clicked');
+
   window.location.href = 'about.html'
 })
 
