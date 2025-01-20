@@ -3,36 +3,34 @@ if(document.readystate == 'loading'){
 } else {
     ready()
 }
+
 function ready() {
-var removeOrderItemButtons = document.getElementsByClassName('btn-danger')
+    var removeOrderItemButtons = document.getElementsByClassName('btn-danger')
+    for (var i = 0; i < removeOrderItemButtons.length; i++){
+        var button = removeOrderItemButtons[i]
+        button.addEventListener('click',removeOderItem)
+    }
 
-for (var i = 0; i < removeOrderItemButtons.length; i++){
-    var button = removeOrderItemButtons[i]
-    button.addEventListener('click',removeOderItem)
-}
-var quantityInputs = document.getElementsByClassName('orderQuantityInput')
-
-for (var i = 0; i < quantityInputs.length; i++){
+    var quantityInputs = document.getElementsByClassName('orderQuantityInput')
+    for (var i = 0; i < quantityInputs.length; i++) {
         var input = quantityInputs[i]
         input.addEventListener('change',quantityChanged)
     }
 
-var addToOrderButtons = document.getElementsByClassName('product')
+    var addToOrderButtons = document.getElementsByClassName('product')
+    for (var i = 0; i < addToOrderButtons.length; i++){
+        var button = addToOrderButtons[i] 
+        button.addEventListener('click',addToOrderClicked)
+    }
 
-for (var i = 0; i < addToOrderButtons.length; i++){
-    var button = addToOrderButtons[i] 
-    button.addEventListener('click',addToOrderClicked)
-}
-
-document.getElementsByClassName('check')[0].addEventListener('click',checkoutClicked)
-
+    document.getElementsByClassName('check')[0].addEventListener('click',checkoutClicked)
 }
 
 function checkoutClicked(){
     alert ('Order confirmed, Thank you.')
-    var orderItems = document.getElementsByClassName('orderItems')
-    while (orderItems.hasChildrenNode()){
-    orderItems.removeChild(cartItems.firstChild)
+    var orderItems = document.getElementsByClassName('orderItems')[0]
+    while (orderItems.hasChildNodes()){
+    orderItems.removeChild(orderItems.firstChild)
     }
     updateOrderTotal()
 }
@@ -41,68 +39,67 @@ function removeOderItem(event){
     var buttonClicked = event.target
         buttonClicked.parentElement.parentElement.remove()
         updateOrderTotal()
-    }
-function quantityChanged(event){
-    var input = event.target
-    if(isNaN(input.value) || input.value <= 0){
-        input.value = 1
-
-    }
-    updateOrderTotal()
 }
+    
+function quantityChanged(event) {
+        var input = event.target
+        if (isNaN(input.value) || input.value <= 0) {
+            input.value = 1
+        }
+        updateOrderTotal()
+ }
 
 function addToOrderClicked(event){
     var button = event.target
     var shopItem = button.parentElement.parentElement
-    var title = shopItem.getElementsByClassName('productTile')[0].innerText
+    var title = shopItem.getElementsByClassName('productTitle')[0].innerText
     var price = shopItem.getElementsByClassName('productPrice')[0].innerText
     var imgUrl = shopItem.getElementsByClassName('productImg')[0].src
-    addItemToOrder(title,price,imgUrl)
+    addItemToOrder(title, price, imgUrl)
     updateOrderTotal()
 }
 
-function addItemToOrder(title,price,imgUrl){
+function addItemToOrder(title,  price, imgUrl) {
     var orderRow = document.createElement('div')
     orderRow.classList.add('orderRow')
-    var orderItems = document.getElementsByClassName('orderItems')
+    var orderItems = document.getElementsByClassName('orderItems')[0]
     var orderItemNames = orderItems.getElementsByClassName('orderItemTitle')
-    for (var i = 0; orderItemNames.length; i++){
-        if (orderItemNames[i].innerText == title)
-            alert('this item is already in order.')
+    for (var i = 0; i < orderItemNames.length; i++) {
+        if (orderItemNames[i].innerText == title) {
+            alert('this item is already in order')
         return
+        }
     }
     var orderRowContents = `
-                <div class="order-item order-column">
+                <div class="orderItem orderColumn">
                     <img class="orderItemImg" src="${imgUrl}" width="50" height="50">
                     <span class="orderItemTitle">${title}</span>
                 </div>
-                    <span class="itemPrice order-column">${price}</span>
-                <div class="order-quantity order-column">
-                    <input class="orderQuantityInput" type="number" valur="1">
+                    <span class="itemPrice orderColumn">${price}</span>
+                <div class="orderQuantity orderColumn">
+                    <input class="orderQuantityInput" type="number" value="1">
                     <button class="btn btn-danger" type="button">remove</button>
-                </div>`
-                
-            
+                </div>`       
     orderRow.innerHTML = orderRowContents
     orderItems.append(orderRow)
-    orderRow.getElementsByClassName('btn-danger')[0].addEventListener('click',removeOderItem)
-    orderRow.getElementsByClassName('orderQuantityInput')[0].addEventListener('change',quantityChanged)
+    orderRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeOderItem)
+    orderRow.getElementsByClassName('orderQuantityInput')[0].addEventListener('change', quantityChanged)
 }
 
 function updateOrderTotal(){
-    var orderItemcontainer = document.getElementsByClassName('oderItems')[0]
+    var orderItemcontainer = document.getElementsByClassName('orderItems')[0]
     var orderRows = orderItemcontainer.getElementsByClassName('orderRow')
-    var total =0
-    for (var i = 0; i < removeOrderItemButtons.length; i++){
-        var orderRows = orderRows[i]
-        var priceEl = orderRows.getElementsByClassName('itemPrice')[0]
-        var quantityEL = orderRows.getElementsByClassName('orderQuantityInput')[0]
-        var price = parselFloat(priceEl.innerText.replace('$',""))
-        var quantity = quantityEL.value
-        total = total + (price*quantity)
+    var total = 0
+    for (var i = 0; i < orderRows.length; i++) {
+        var orderRow = orderRows[i]
+        var priceElement = orderRow.getElementsByClassName('itemPrice')[0]
+        var quantityElement = orderRow.getElementsByClassName('orderQuantityInput')[0]
+        var price = parseFloat(priceElement.innerText.replace('$',''))
+        var quantity = quantityElement.value
+        total = total + (price * quantity)
     }
-    total = Math.round(total*100) / 100
-    document.getElementsByClassName('orderTotlePrice')[0].innerText = '$' + total
+    total = Math.round(total * 100) / 100
+    document.getElementsByClassName('orderTotalPrice')[0].innerText = '$' + total
 }
 // need to add sales tax and tip maybe
 /*function calculateTaxes(price, quantity) {
@@ -111,7 +108,7 @@ function updateOrderTotal(){
     return totalPrice;
 }*/
 
-let Products = [
+/*let Products = [
 {
     imgUrl: 'https://images.pexels.com/photos/8165239/pexels-photo-8165239.jpeg',
     title: 'cheese',
@@ -142,5 +139,5 @@ let Products = [
 // base code for generating img in fav coulmon. orderHistory is filler need to figer out fill this out
 let fav = Products.find(fav => fav.product === "orderHistory");
 
-// code for checkout
+// code for checkout*/
 

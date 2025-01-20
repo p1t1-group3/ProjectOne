@@ -61,24 +61,30 @@
         <button id="aboutB" class = "btn">About</button>
         
         <!-- offcanvas for order -->
-        <!--<button id="orderOn" type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"> Order Online </button>
+        <button id="orderOn" type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"> Order Online </button>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
               <h5 class="offcanvas-title" id="offcanvasRightLabel">Order</h5>
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              <div class="orderItems">
-              
-              </div>
-              <div class="orderTotal">
-                <strong class="orderTotalTitle">Total</strong>
-                <span clas="orderTotalPrice">$0</span>
-              </div>
-              <button type="button" class="btn check">Checkout</button>
-            </div>
+              <section class="container contentSection">
+      </div>  
+      </section>
             <div class="offcanvas-body">
-              
+                <div class="orderRow">
+                    <span class="orderItem orderheader orderColumn">Item</span>
+                    <span class="orderPrice orderheader orderColumn">Price</span>
+                    <span class="orderQuantity orderheader orderColumn">Quantity</span>
+                </div> 
+                <div class="orderItems">
+                </div>
+                <div class="orderTotal">
+                  <strong class="orderTotalTitle">Total</strong>
+                  <span class="orderTotalPrice">$0</span>
+                </div>
+                <button type="button" class="btn check">Checkout</button>
+              </div>  
             </div>
-          </div>-->
+          </div>
     </nav>
 
     <main id="menu">
@@ -140,22 +146,7 @@
             </div>
           </div>
         </div>
-      <section class="container contentSection">
-        <div class="orderRow">
-            <span class="orderItem orderheader ordercolumn">Item</span>
-            <span class="orderPrice orderheader ordercolumn">Price</span>
-            <span class="orderquantity orderheader ordercolumn">Quantity</span>
-        </div> 
-        <div class="orderItems">
-              
-        </div>
-        <div class="orderTotal">
-          <strong class="orderTotalTitle">Total</strong>
-          <span clas="orderTotalPrice">$0</span>
-        </div>
-        <button type="button" class="btn check">Checkout</button>
-      </div>  
-      </section>
+      
     </main>
     <footer>
         <p id = "G3" class="jersey-15-regular"> 2025 &copy Project by Group 3</p>
