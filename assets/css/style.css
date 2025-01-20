@@ -128,6 +128,20 @@ h2, p {
 .orderRow:last-child .orderColumn {
     border: none;
 }
+
+#tip{
+    height: 34px;
+    width: 75px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: grey;
+    color: blue;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
 .orderTotal {
     text-align: end;
     margin-top: 10px;

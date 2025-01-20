@@ -6,7 +6,7 @@ if(document.readystate == 'loading'){
 
 function ready() {
     var removeOrderItemButtons = document.getElementsByClassName('btn-danger')
-    for (var i = 0; i < removeOrderItemButtons.length; i++){
+    for (var i = 0; i < removeOrderItemButtons.length; i++) {
         var button = removeOrderItemButtons[i]
         button.addEventListener('click',removeOderItem)
     }
@@ -32,20 +32,23 @@ function checkoutClicked(){
     while (orderItems.hasChildNodes()){
     orderItems.removeChild(orderItems.firstChild)
     }
+    updateOrderTax()
     updateOrderTotal()
 }
 
 function removeOderItem(event){
     var buttonClicked = event.target
         buttonClicked.parentElement.parentElement.remove()
+        updateOrderTax()
         updateOrderTotal()
 }
     
 function quantityChanged(event) {
-        var input = event.target
-        if (isNaN(input.value) || input.value <= 0) {
-            input.value = 1
-        }
+    var input = event.target
+    if (isNaN(input.value) || input.value <= 0) {
+        input.value = 1
+    }
+        updateOrderTax()
         updateOrderTotal()
  }
 
@@ -56,6 +59,7 @@ function addToOrderClicked(event){
     var price = shopItem.getElementsByClassName('productPrice')[0].innerText
     var imgUrl = shopItem.getElementsByClassName('productImg')[0].src
     addItemToOrder(title, price, imgUrl)
+    updateOrderTax()
     updateOrderTotal()
 }
 
@@ -67,7 +71,7 @@ function addItemToOrder(title,  price, imgUrl) {
     for (var i = 0; i < orderItemNames.length; i++) {
         if (orderItemNames[i].innerText == title) {
             alert('this item is already in order')
-        return
+            return
         }
     }
     var orderRowContents = `
@@ -86,6 +90,22 @@ function addItemToOrder(title,  price, imgUrl) {
     orderRow.getElementsByClassName('orderQuantityInput')[0].addEventListener('change', quantityChanged)
 }
 
+function updateOrderTax(){
+    var orderItemcontainer = document.getElementsByClassName('orderItems')[0]
+    var orderRows = orderItemcontainer.getElementsByClassName('orderRow')
+    var total = 0
+    for (var i = 0; i < orderRows.length; i++) {
+        var orderRow = orderRows[i]
+        var priceElement = orderRow.getElementsByClassName('itemPrice')[0]
+        var quantityElement = orderRow.getElementsByClassName('orderQuantityInput')[0]
+        var price = parseFloat(priceElement.innerText.replace('$',''))
+        var quantity = quantityElement.value
+        total = total + (price * quantity) / 10;
+    }
+    total = Math.round(total * 100) / 100
+    document.getElementsByClassName('orderTax')[0].innerText = '$' + total
+}
+
 function updateOrderTotal(){
     var orderItemcontainer = document.getElementsByClassName('orderItems')[0]
     var orderRows = orderItemcontainer.getElementsByClassName('orderRow')
@@ -96,17 +116,13 @@ function updateOrderTotal(){
         var quantityElement = orderRow.getElementsByClassName('orderQuantityInput')[0]
         var price = parseFloat(priceElement.innerText.replace('$',''))
         var quantity = quantityElement.value
-        total = total + (price * quantity)
+        var salesTax = .10;
+        total = total + (price * quantity)* (1 + salesTax);
     }
     total = Math.round(total * 100) / 100
     document.getElementsByClassName('orderTotalPrice')[0].innerText = '$' + total
 }
-// need to add sales tax and tip maybe
-/*function calculateTaxes(price, quantity) {
-    var salesTax = .10;
-    var totalPrice = (price * quantity) * (1 + salesTax);
-    return totalPrice;
-}*/
+
 
 /*let Products = [
 {
@@ -137,7 +153,4 @@ function updateOrderTotal(){
 ]
 
 // base code for generating img in fav coulmon. orderHistory is filler need to figer out fill this out
-let fav = Products.find(fav => fav.product === "orderHistory");
-
-// code for checkout*/
-
+let fav = Products.find(fav => fav.product === "orderHistory"); */
