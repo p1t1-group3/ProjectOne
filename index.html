@@ -61,7 +61,7 @@
         <button id="aboutB" class = "btn">About</button>
         
         <!-- offcanvas for order -->
-        <button id="orderOn" type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"> Order Online </button>
+        <!--<button id="orderOn" type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"> Order Online </button>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
               <h5 class="offcanvas-title" id="offcanvasRightLabel">Order</h5>
@@ -78,21 +78,84 @@
             <div class="offcanvas-body">
               
             </div>
-          </div>
+          </div>-->
     </nav>
 
     <main id="menu">
-        <h2>Menu</h2>
+        <h2 class="productMenu">Menu</h2>
         <div class="container text-center">
-            <div class="row row-cols-3">
-              <div id="fav" class="col product">Favorites</div>
-              <div id="Cheese" class="col product">Cheese Pizza $25.00</div>
-              <div id="Pepperoni" class="col product">Pepperoni Pizza $28.00</div>
-              <div id="Margarita"class="col product">Margarita Pizza $28.00</div>
-              <div id="knots"class="col product">Garlic Knots $15.00</div>
-              <div id="drink" class="col product">Drinks $8.00</div>
+            <div class="row row-cols-3 products">
+              <div id="fav" class="col product">
+                <span class="">Favorites</span>
+                <img class="" src="">
+                <div class="productDetails">
+                    <Span class=""> </Span>
+                    <button class="btn btn-secondary productbutton">Order</button>
+                </div>
+              
+              </div>
+              <div id="Cheese" class="col product">
+                <span class="productTitle">Cheese Pizza</span>
+                <img class="productImg" src="https://images.pexels.com/photos/8165239/pexels-photo-8165239.jpeg">
+                <div class="productDetails">
+                    <Span class="productPrice">$25.00</Span>
+                    <button class="btn btn-secondary productbutton">Order</button>
+                </div>
+                </div>
+              <div id="Pepperoni" class="col product">
+                <span class="productTitle">Pepperoni Pizza</span>
+                <img class="productImg" src="https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'">
+                <div class="productDetails">
+                    <Span class="productPrice">$28.00</Span>
+                    <button class="btn btn-secondary productbutton">Order</button>
+                </div>
+                 </div>
+              <div id="Margarita"class="col product">
+                <span class="productTitle">Margarita Pizza</span>
+                <img class="productImg" src="https://images.pexels.com/photos/2471171/pexels-photo-2471171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+                <div class="productDetails">
+                    <Span class="productPrice">$28.00</Span>
+                    <button class="btn btn-secondary productbutton">Order</button>
+                </div>
+                
             </div>
-          </div>    
+              <div id="knots"class="col product">
+                <span class="productTitle">Garlic knots</span>
+                <img class="productImg" src="https://media.istockphoto.com/id/1330984367/photo/soft-and-chewy-parmesan-garlic-knots.jpg?s=2048x2048&w=is&k=20&c=0n_Pdiz__d98DfcVe45fWAgrE3IPwIFs2o7vCcnDSNk=">
+                <div class="productDetails">
+                    <Span class="productPrice">$15.00</Span>
+                    <button class="btn btn-secondary productbutton">Order</button>
+                </div>
+                
+            </div>
+              <div id="drink" class="col product">
+                <span class="productTitle">Drinks</span>
+                <img class="productImg" src="https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg">
+                <div class="productDetails">
+                    <Span class="productPrice">$8.00</Span>
+                    <button class="btn btn-secondary productbutton">Order</button>
+                </div>
+    
+            </div>
+            </div>
+          </div>
+        </div>
+      <section class="container contentSection">
+        <div class="orderRow">
+            <span class="orderItem orderheader ordercolumn">Item</span>
+            <span class="orderPrice orderheader ordercolumn">Price</span>
+            <span class="orderquantity orderheader ordercolumn">Quantity</span>
+        </div> 
+        <div class="orderItems">
+              
+        </div>
+        <div class="orderTotal">
+          <strong class="orderTotalTitle">Total</strong>
+          <span clas="orderTotalPrice">$0</span>
+        </div>
+        <button type="button" class="btn check">Checkout</button>
+      </div>  
+      </section>
     </main>
     <footer>
         <p id = "G3" class="jersey-15-regular"> 2025 &copy Project by Group 3</p>

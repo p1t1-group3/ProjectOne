@@ -10,7 +10,7 @@ for (var i = 0; i < removeOrderItemButtons.length; i++){
     var button = removeOrderItemButtons[i]
     button.addEventListener('click',removeOderItem)
 }
-var quantityInputs = Document.getElementsByClassName('orderQuantityInput')
+var quantityInputs = document.getElementsByClassName('orderQuantityInput')
 
 for (var i = 0; i < quantityInputs.length; i++){
         var input = quantityInputs[i]
@@ -30,7 +30,7 @@ document.getElementsByClassName('check')[0].addEventListener('click',checkoutCli
 
 function checkoutClicked(){
     alert ('Order confirmed, Thank you.')
-    var orderItems.getElementsByClassName('orderItems')[0]
+    var orderItems = document.getElementsByClassName('orderItems')
     while (orderItems.hasChildrenNode()){
     orderItems.removeChild(cartItems.firstChild)
     }
@@ -53,37 +53,36 @@ function quantityChanged(event){
 
 function addToOrderClicked(event){
     var button = event.target
-    var shopItem = button.getElementsByClassName('product')
-    var title = shopItem.getElementsByClassName('product')[0].innerText
-    var price = shopItem.getElementsByClassName('product')[1].innerText
-    //var imgUrl = shopItem.getElementsByClassName('productImg')[0].src
-    addItemToOrder(title,price)
+    var shopItem = button.parentElement.parentElement
+    var title = shopItem.getElementsByClassName('productTile')[0].innerText
+    var price = shopItem.getElementsByClassName('productPrice')[0].innerText
+    var imgUrl = shopItem.getElementsByClassName('productImg')[0].src
+    addItemToOrder(title,price,imgUrl)
     updateOrderTotal()
 }
 
-function addItemToOrder(title,price){
+function addItemToOrder(title,price,imgUrl){
     var orderRow = document.createElement('div')
     orderRow.classList.add('orderRow')
     var orderItems = document.getElementsByClassName('orderItems')
-    var orderItems = oderItems.getElementsByClassName('orderItemTitle')
+    var orderItemNames = orderItems.getElementsByClassName('orderItemTitle')
     for (var i = 0; orderItemNames.length; i++){
         if (orderItemNames[i].innerText == title)
             alert('this item is already in order.')
         return
     }
-    var orderRowContents = ` <div class="orderItems">
-                <div class="orderRow">
+    var orderRowContents = `
                 <div class="order-item order-column">
-                    <img class="cart-item-img" src="${imgUrl}" width="50" height="50">
+                    <img class="orderItemImg" src="${imgUrl}" width="50" height="50">
                     <span class="orderItemTitle">${title}</span>
                 </div>
                     <span class="itemPrice order-column">${price}</span>
                 <div class="order-quantity order-column">
-                        <input class="orderQuantityInput" type="number" valur="1">
-                        <button class="btn btn-danger" type="button">remove</button>
-                    </div>
-                </div>
-              </div>`
+                    <input class="orderQuantityInput" type="number" valur="1">
+                    <button class="btn btn-danger" type="button">remove</button>
+                </div>`
+                
+            
     orderRow.innerHTML = orderRowContents
     orderItems.append(orderRow)
     orderRow.getElementsByClassName('btn-danger')[0].addEventListener('click',removeOderItem)
@@ -114,28 +113,28 @@ function updateOrderTotal(){
 
 let Products = [
 {
-    imgUrl: 'https://www.pexels.com/photo/a-close-up-shot-of-a-delicious-pizza-8165239/'
-    title: 'cheese'
+    imgUrl: 'https://images.pexels.com/photos/8165239/pexels-photo-8165239.jpeg',
+    title: 'cheese',
     price: 25.00
 },
 {
-    imgUrl:'https://www.pexels.com/photo/pizza-on-brown-wooden-board-825661/'
-    title:'pepperoni'
+    imgUrl:'https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    title:'pepperoni',
     price:  28.00
 },
 {
-     imgUrl: 'https://www.pexels.com/photo/cooked-food-2471171/'
-    title: 'margarita'
+     imgUrl: 'https://images.pexels.com/photos/2471171/pexels-photo-2471171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    title: 'margarita',
     price: 28.00
 },
 {
-     imgUrl: 'https://media.istockphoto.com/id/1330984367/photo/soft-and-chewy-parmesan-garlic-knots.jpg?s=2048x2048&w=is&k=20&c=0n_Pdiz__d98DfcVe45fWAgrE3IPwIFs2o7vCcnDSNk='
-    title:'knots'
+     imgUrl: 'https://media.istockphoto.com/id/1330984367/photo/soft-and-chewy-parmesan-garlic-knots.jpg?s=2048x2048&w=is&k=20&c=0n_Pdiz__d98DfcVe45fWAgrE3IPwIFs2o7vCcnDSNk=',
+    title:'knots',
     price: 15.00
 },
 {
-     imgUrl: 'https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg'
-    title:'drink'
+     imgUrl: 'https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg',
+    title:'drink',
     price: 8.00
 },
 ]

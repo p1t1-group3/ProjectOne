@@ -21,6 +21,11 @@ body {
     right: 5px;
 }
 
+h2, p {
+    text-align: center;
+    padding: 1em;
+}
+
 .product{
     border-style: solid;
     border-color: white;
@@ -29,6 +34,24 @@ body {
     padding: 1em;
 }
 
+.productTitle {
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    padding: 2px;
+}
+.productImg{
+    height: 200px;
+    width: 200px;
+}
+.productButton{
+    bottom: 5px;
+    
+}
+
+.productDetails{
+    padding: 1em;
+}
 
 .navbar h1 {
     
