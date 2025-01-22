@@ -17,11 +17,12 @@ const loginBtn = document.getElementById('userLogin')
 let UpdatedInfo = JSON.parse(localStorage.getItem('customerInfo'));
 
 
+
 // I want to hide this button if user is logedin. moving order history buttton to login button
 function updateSignUpButton(){
-  if (UpdatedInfo == null) {
+  if (UpdatedInfo !== null) {
     console.log(`You have successfully signed up. Welcome ` + `${UpdatedInfo.Name}`);
-    document.getElementById('userSignUP').textContent = UpdatedInfo.Name + `Order History`;
+    document.getElementById('userSignUP').textContent = UpdatedInfo.Name + `'s Order History`;
     document.getElementById('userSignUP').style.fontSize = 'inhert';   
     signUPModalBtn.addEventListener('click',function(event){
       window.location.href = 'history.html';
@@ -72,14 +73,14 @@ updateLoginButton();
 homeBtn.addEventListener('click',function(event){
   event.preventDefault();
 
-  window.location.href = 'index.html'
+  window.location.assign('index.html');
 });
 
 // Added link to About Page
 aboutBtn.addEventListener('click',function(event){
   event.preventDefault();
 
-  window.location.href = 'about.html'
+  window.location.assign('about.html')
 })
 
           

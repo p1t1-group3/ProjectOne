@@ -4,11 +4,13 @@ if(document.readystate == 'loading'){
     ready()
 }
 
+const orderArray = [];
+
 function ready() {
     var removeOrderItemButtons = document.getElementsByClassName('btn-danger')
     for (var i = 0; i < removeOrderItemButtons.length; i++) {
         var button = removeOrderItemButtons[i]
-        button.addEventListener('click',removeOderItem)
+        button.addEventListener('click',removeOrderItem)
     }
 
     var quantityInputs = document.getElementsByClassName('orderQuantityInput')
@@ -26,20 +28,48 @@ function ready() {
     document.getElementsByClassName('check')[0].addEventListener('click',checkoutClicked)
 }
 
-function checkoutClicked(){
-    alert ('Order confirmed, Thank you.')
+function checkoutClicked(event){
+    
+    var orderItemcontainer = document.getElementsByClassName('orderItems')[0]
+    var orderRows = orderItemcontainer.getElementsByClassName('orderRow')
+    var total = 0
+    var totalTax = 0
+    for (var i = 0; i < orderRows.length; i++) {
+        var orderRow = orderRows[i]
+        var priceElement = orderRow.getElementsByClassName('itemPrice')[0]
+        var quantityElement = orderRow.getElementsByClassName('orderQuantityInput')[0]
+        var price = parseFloat(priceElement.innerText.replace('$',''))
+        var quantity = quantityElement.value
+        var salesTax = .10;
+        
+        totalTax = total + (price * quantity) / 10;
+        total = total + (price * quantity)* (1 + salesTax);       
+        
+    } 
+    total = Math.round(total * 100) / 100;
+
+    
+    orderArray.push(total);
+    console.log(orderArray);
+    orderLog = JSON.stringify(orderArray);
+    localStorage.setItem('orderLog',orderLog);
+
     var orderItems = document.getElementsByClassName('orderItems')[0]
     while (orderItems.hasChildNodes()){
     orderItems.removeChild(orderItems.firstChild)
     }
-    updateOrderTax()
+
     updateOrderTotal()
+
+    // window.location.assign('history.html');
+    
+    
 }
 
-function removeOderItem(event){
+function removeOrderItem(event){
     var buttonClicked = event.target
         buttonClicked.parentElement.parentElement.remove()
-        updateOrderTax()
+
         updateOrderTotal()
 }
     
@@ -48,7 +78,7 @@ function quantityChanged(event) {
     if (isNaN(input.value) || input.value <= 0) {
         input.value = 1
     }
-        updateOrderTax()
+
         updateOrderTotal()
  }
 
@@ -59,7 +89,7 @@ function addToOrderClicked(event){
     var price = shopItem.getElementsByClassName('productPrice')[0].innerText
     var imgUrl = shopItem.getElementsByClassName('productImg')[0].src
     addItemToOrder(title, price, imgUrl)
-    updateOrderTax()
+
     updateOrderTotal()
 }
 
@@ -86,30 +116,17 @@ function addItemToOrder(title,  price, imgUrl) {
                 </div>`       
     orderRow.innerHTML = orderRowContents
     orderItems.append(orderRow)
-    orderRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeOderItem)
+    orderRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeOrderItem)
     orderRow.getElementsByClassName('orderQuantityInput')[0].addEventListener('change', quantityChanged)
 }
 
-function updateOrderTax(){
-    var orderItemcontainer = document.getElementsByClassName('orderItems')[0]
-    var orderRows = orderItemcontainer.getElementsByClassName('orderRow')
-    var total = 0
-    for (var i = 0; i < orderRows.length; i++) {
-        var orderRow = orderRows[i]
-        var priceElement = orderRow.getElementsByClassName('itemPrice')[0]
-        var quantityElement = orderRow.getElementsByClassName('orderQuantityInput')[0]
-        var price = parseFloat(priceElement.innerText.replace('$',''))
-        var quantity = quantityElement.value
-        total = total + (price * quantity) / 10;
-    }
-    total = Math.round(total * 100) / 100
-    document.getElementsByClassName('orderTax')[0].innerText = '$' + total
-}
+
 
 function updateOrderTotal(){
     var orderItemcontainer = document.getElementsByClassName('orderItems')[0]
     var orderRows = orderItemcontainer.getElementsByClassName('orderRow')
     var total = 0
+    var totalTax = 0
     for (var i = 0; i < orderRows.length; i++) {
         var orderRow = orderRows[i]
         var priceElement = orderRow.getElementsByClassName('itemPrice')[0]
@@ -117,12 +134,39 @@ function updateOrderTotal(){
         var price = parseFloat(priceElement.innerText.replace('$',''))
         var quantity = quantityElement.value
         var salesTax = .10;
+        
+        totalTax = total + (price * quantity) / 10;
         total = total + (price * quantity)* (1 + salesTax);
+        
+        
     }
     total = Math.round(total * 100) / 100
+    totalTax = Math.round(totalTax * 100) / 100
     document.getElementsByClassName('orderTotalPrice')[0].innerText = '$' + total
+    document.getElementsByClassName('orderTax')[0].innerText = '$' + totalTax
 }
 
+updateOrderTotal();
+
+function addOrderItems() {
+    const orders = document.getElementById('orders');
+    const orderLog = JSON.parse(localStorage.getItem('orderLog'));
+
+    if (!orderLog || orderLog.length === 0) {
+        orders.appendChild('No orders found');
+        return;
+    }
+    
+    for (i=0; i<orderLog.length; i++){
+    const orderItem = orderLog[i];
+    const orderLine = document.createElement('p');
+    orderLine.innerText = `Order # ${i+1}: Amount: ${orderLog[i]}`;
+    orders.appendChild(orderLine);
+    console.log(orderLine);
+}
+}
+
+addOrderItems();
 
 /*let Products = [
 {
