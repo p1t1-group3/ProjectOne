@@ -4,7 +4,7 @@ if(document.readystate == 'loading'){
     ready()
 }
 
-const orderArray = [];
+//const orderArray = [];
 
 function ready() {
     var removeOrderItemButtons = document.getElementsByClassName('btn-danger')
@@ -34,11 +34,18 @@ function checkoutClicked(event){
     var orderRows = orderItemcontainer.getElementsByClassName('orderRow')
     var total = 0
     var totalTax = 0
+    const orderLog = JSON.parse(localStorage.getItem('orderLog'));
+    if (orderLog.length === null){ 
+        orderArray = [];
+    }
+    else{
+        orderArray = orderLog
+    }
     for (var i = 0; i < orderRows.length; i++) {
         var orderRow = orderRows[i]
         var priceElement = orderRow.getElementsByClassName('itemPrice')[0]
         var quantityElement = orderRow.getElementsByClassName('orderQuantityInput')[0]
-        var price = parseFloat(priceElement.innerText.replace('$',''))
+        var price =priceElement.innerText.replace('$','')
         var quantity = quantityElement.value
         var salesTax = .10;
         
@@ -75,7 +82,7 @@ function removeOrderItem(event){
     
 function quantityChanged(event) {
     var input = event.target
-    if (isNaN(input.value) || input.value <= 0) {
+    if ( isNaN (input.value) || input.value <= 0) {
         input.value = 1
     }
 
@@ -148,25 +155,7 @@ function updateOrderTotal(){
 
 updateOrderTotal();
 
-function addOrderItems() {
-    const orders = document.getElementById('orders');
-    const orderLog = JSON.parse(localStorage.getItem('orderLog'));
 
-    if (!orderLog || orderLog.length === 0) {
-        orders.appendChild('No orders found');
-        return;
-    }
-    
-    for (i=0; i<orderLog.length; i++){
-    const orderItem = orderLog[i];
-    const orderLine = document.createElement('p');
-    orderLine.innerText = `Order # ${i+1}: Amount: ${orderLog[i]}`;
-    orders.appendChild(orderLine);
-    console.log(orderLine);
-}
-}
-
-addOrderItems();
 
 /*let Products = [
 {
