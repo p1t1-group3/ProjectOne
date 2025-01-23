@@ -10,12 +10,34 @@ const customerEmail  =document.querySelector('.customer-email');
 const customerNumber  =document.querySelector('.customer-number');
 const customerAddress  =document.querySelector('.customer-address');
 const signUPModalBtn= document.querySelector('#userSignUP');
+const acceptBtn = document.getElementById('acceptBtn');
+const homeBtn = document.getElementById('homeB');
+const aboutBtn = document.getElementById('aboutB');
+const loginBtn = document.getElementById('userLogin')
+let UpdatedInfo = JSON.parse(localStorage.getItem('customerInfo'));
 
 
 
-   signUpBtn.addEventListener('click', function (event) {
+// I want to hide this button if user is logedin. moving order history buttton to login button
+function updateSignUpButton(){
+  if (UpdatedInfo !== null) {
+    console.log(`You have successfully signed up. Welcome ` + `${UpdatedInfo.Name}`);
+    document.getElementById('userSignUP').textContent = UpdatedInfo.Name + `'s Order History`;
+    document.getElementById('userSignUP').style.fontSize = 'inhert';   
+    signUPModalBtn.addEventListener('click',function(event){
+      window.location.href = 'history.html';
+      // If they have their name saved in local storage, then the Sign Up button changes to a link to their Order History
+    })  
+  } else {
+    document.getElementById('userSignUP').textContent = 'Sign Up';
+  }
+}
+
+updateSignUpButton();
+
+acceptBtn.addEventListener('click',function(event){
   event.preventDefault();
-
+  // Changed this from userSignUP button to acceptBtn which is inside the modal because we don't want to set any values until they click Accept
   const customerInfo = {
     Name: customerName.value,
     Email: customerEmail.value,
@@ -24,18 +46,42 @@ const signUPModalBtn= document.querySelector('#userSignUP');
   };
 
   localStorage.setItem('customerInfo', JSON.stringify(customerInfo));
-  customerSignUp();
+
+  UpdatedInfo = customerInfo;
+  updateSignUpButton();
+
 });
 
-function customerSignUp() {
-  const UpdatedInfo = JSON.parse(localStorage.getItem('customerInfo'));
-  if (customerInfo !== null) {
-    console.log("you have successfully signed")
-    document.querySelector('#userSignUP').textContent =
-     UpdatedInfo.customerName+ `  ${UpdatedInfo.phone}`;
+/* I have made UpdatedInfo a global variable so that we can update the signUpModalBtn text content with the user's name.
+function updateLoginButton(){
+  if (UpdatedInfo == null) {
+    console.log(`You have successfully signed up. Welcome ` + `${UpdatedInfo.Name}`);
+    document.getElementById('userLogin').textContent = UpdatedInfo.Name + `Order History`;
+    document.getElementById('userLogin').style.fontSize = 'inhert';   
+    signUPModalBtn.addEventListener('click',function(event){
+      window.location.href = 'history.html';
+      // If they have their name saved in local storage, then the Sign Up button changes to a link to their Order History
+    })  
+  } else {
+    document.getElementById('userSignUP').textContent = 'Sign Up';
   }
 }
 
+updateLoginButton();
+*/
+// Added link to Home Page
+homeBtn.addEventListener('click',function(event){
+  event.preventDefault();
+
+  window.location.assign('index.html');
+});
+
+// Added link to About Page
+aboutBtn.addEventListener('click',function(event){
+  event.preventDefault();
+
+  window.location.assign('about.html')
+})
 
           
     

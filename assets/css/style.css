@@ -1,0 +1,204 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: grey;
+    color: blue;
+    line-height: 1.6;
+}
+
+.navbar {
+    background-color: black;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+    
+}
+.check{
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+}
+
+h2, p {
+    text-align: center;
+    padding: 1em;
+}
+
+.product{
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    background-color: black;
+    padding: 1em;
+}
+
+.productTitle {
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    padding: 2px;
+}
+.productImg{
+    height: 200px;
+    width: 200px;
+}
+.productButton{
+    bottom: 5px;
+    
+}
+
+.productDetails{
+    padding: 1em;
+}
+
+.orderColumn{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+.orderRow{
+    display: flex;
+}
+
+.orderItem {
+    width: 45%;
+    font-size: 1.2em;
+    color: blue;
+}
+
+
+.orderPrice {
+    width: 20%;
+    font-size: 1.2em;
+    color: blue;
+}
+
+.orderQuantity {
+    width: 35%;
+    font-size: 1.2em;
+    color: blue;
+}
+
+.orderItemTitle {
+    color: blue;
+    margin-left: .5em;
+    font-size: 1.2em;
+}
+
+.orderItemImg {
+    width: 75px;
+    height: auto;
+    border-radius: 10px;
+}
+.btn-danger {
+    color: white;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #CC4C4C;
+}
+
+.orderQuantityInput {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: grey;
+    color: blue;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+   
+.orderRow:last-child {
+    border-bottom: 1px solid black;
+}
+
+.orderRow:last-child .orderColumn {
+    border: none;
+}
+
+#tip{
+    height: 34px;
+    width: 75px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: grey;
+    color: blue;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+.orderTotal {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.orderTotalTitle {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+    margin-right: 20px;
+}
+.orderTotalPrice {
+    color: blue;
+    font-size: 1.1em;
+}
+
+.navbar h1 {
+    
+    text-shadow: 1px 1px 1px white;
+    
+}
+
+.btn  {
+    font-style: italic;
+    background-color: blue;
+    color: white;
+    
+}
+
+#local {
+    /* justify-content: center; */
+}
+
+.locPizza {
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    
+}
+
+.hero {
+    height: 80vh;
+    display: flex;
+    /* padding: 2em; */
+}
+
+.modal-dialog { /* This is the Text at the top of the modal*/
+    color: gray;
+}
+
+.modal-content {
+    
+}
+.jersey-15-regular {
+    font-family: "Jersey 15", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
