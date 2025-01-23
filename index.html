@@ -21,41 +21,38 @@
 
         <button id="userSignUP" type="button" class="btn " data-bs-toggle="modal" 
         
-        data-bs-target="#exampleModal" data-bs-whatever="@signUP">Sign up</button>
+        data-bs-target="#staticBackdrop" data-bs-whatever="@signUP">Sign up</button>
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="staticBackdrop" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Sign up</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action=""id="customerInfo">
-                            <!-- <input type="text"><span class="customer-name"></span> -->
-            <label for="customer-name">Name:</label>
-            <input type="text" class="customer-name" name="customer-name"><br>
-            <label for="customer-email">Email:</label>
-            <input type="email" class="customer-email" name="customer-email"><br>
-            <label for="customer-number">Phone Number:</label>
-            <input type="text" class="customer-number" name="customer-number"><br>
-            <label for="customer-address">Address:</label>
-            <input type="text" class="customer-address" name="customer-address"><br>
-            <label for="inputPassword" class="col-form-label">Password</label>
-            <input type="password" class="inputPassword" name="customer-password">
-             <p id="passwordHelpInline" class="form-text">
-                Must be 8-20 characters long.
-              </p>
-            
-            </form>
-            </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="acceptBtn" data-bs-dismiss="modal">Accept</button>
-                    </div>
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Sign up</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <div class="modal-body">
+                    <label for="customer-name">Name:</label>
+                    <input type="text" class="customer-name" name="customer-name"><br>
+                    <label for="customer-email">Email:</label>
+                    <input type="email" class="customer-email" name="customer-email"><br>
+                    <label for="customer-number">Phone Number:</label>
+                    <input type="text" class="customer-number" name="customer-number"><br>
+                    <label for="customer-address">Address:</label>
+                    <input type="text" class="customer-address" name="customer-address"><br>
+                    <label for="inputPassword" class="col-form-label">Password</label>
+                    <input type="password" class="inputPassword" name="customer-password">
+                     <p id="passwordHelpInline" class="form-text">
+                        Must be 8-20 characters long.
+                      </p>
+                    
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
             </div>
-        </div>
+          </div>
         <!-- <button id="userLogin" type="button" class="btn" data-bs-toggle="modal" data-bs-target="loginModal" data-bs-whatever="@userLogin">login</button> -->
           
 
@@ -119,3 +116,4 @@
     <script src="./assets/js/script.js"></script>
     <!-- <script src="./assets/js/router.js"></script> -->
 </html>
+
