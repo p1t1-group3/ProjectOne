@@ -12,6 +12,8 @@ body {
 }
 
 .navbar {
+    position: sticky;
+    top: 0;
     background-color: rgb(160, 124, 124);
     align-items: center;
     justify-content: space-between;
@@ -185,7 +187,7 @@ h2{
 
 .navbar h1 {
     
-    text-shadow: 1px 1px 1px white;
+    text-shadow: 1px 1px 1px tomato;
     
 }
 

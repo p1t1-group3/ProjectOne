@@ -6,6 +6,7 @@ let order = JSON.parse(localStorage.getItem('order')) || {
     items: [],
     itemTotal: 0,    
     tax: 0,
+    tip:0,
     total: 0
 };
 
@@ -129,6 +130,7 @@ function checkoutClicked(event) {
         items: [],
         itemTotal: 0,
         tax: 0,
+        tip: 0,
         total: 0
     };
 
