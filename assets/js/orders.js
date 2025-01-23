@@ -173,14 +173,14 @@ function removeOrderItem(event){
 }
     
 function quantityChanged(event) {
-    console.log('quantityChanged function called')
+    
     let input = event.target
-    console.log(input.value);
+    
     if ( isNaN (input.value) || input.value <= 0) {
         input.value = 1
     } else {
         order.items[0].quantity = input.value;
-        console.log(order);
+        
     }
 
     calculateTotalsTaxes()
@@ -220,7 +220,7 @@ function addToOrder(event){
 
 function calculateTotalsTaxes() {
     // Calculate the item total
-    console.log(order.items.quantity);
+    
     let itemTotal = order.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
     
     // Calculate tax (10%)
@@ -270,47 +270,3 @@ function createOrderItemElement(title, price, imgUrl, quantity) {
 }
 
 
-
-
-
-
-let Products = [
-{
-    imgUrl: 'https://images.pexels.com/photos/8165239/pexels-photo-8165239.jpeg',
-    title: 'Cheese',
-    quantity: 1,
-    price: 25
-},
-{
-    imgUrl:'https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    title:'Pepperoni',
-    quantity: 1,
-    price:  28
-},
-{
-    imgUrl: 'https://images.pexels.com/photos/2471171/pexels-photo-2471171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    title: 'Margarita',
-    quantity: 1,
-    price: 28
-},
-{
-    imgUrl: 'https://media.istockphoto.com/id/1330984367/photo/soft-and-chewy-parmesan-garlic-knots.jpg?s=2048x2048&w=is&k=20&c=0n_Pdiz__d98DfcVe45fWAgrE3IPwIFs2o7vCcnDSNk=',
-    title:'Garlic Knots',
-    quantity: 1,
-    price: 15
-},
-{
-    imgUrl:'https://images.pexels.com/photos/230325/pexels-photo-230325.jpeg',
-    title:'Cookies',
-    quantity: 1,
-    price: 5
-},
-{
-    imgUrl: 'https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg',
-    title:'Drinks',
-    quantity: 1,
-    price: 8
-}
-]
-
-renderProducts();
