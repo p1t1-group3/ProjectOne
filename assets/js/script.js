@@ -1,5 +1,5 @@
 const signUp = document.getElementById("signUpModal")
-const order = document.getElementById("orderModal")
+// const order = document.getElementById("orderModal")
 const produce = document.getElementById("product")
 const pizzamenu = document.getElementById("menu")
  const modalBodyEls= document.getElementsByClassName('modal-body');
@@ -15,6 +15,7 @@ const homeBtn = document.getElementById('homeB');
 const aboutBtn = document.getElementById('aboutB');
 const loginBtn = document.getElementById('userLogin')
 let UpdatedInfo = JSON.parse(localStorage.getItem('customerInfo'));
+
 
 
 // I want to hide this button if user is logedin. moving order history buttton to login button
@@ -56,14 +57,14 @@ acceptBtn.addEventListener('click',function(event){
 homeBtn.addEventListener('click',function(event){
   event.preventDefault();
 
-  window.location.href = 'index.html'
+  window.location.assign('index.html');
 });
 
 // Added link to About Page
 aboutBtn.addEventListener('click',function(event){
   event.preventDefault();
 
-  window.location.href = 'about.html'
+  window.location.assign('about.html')
 })
 
           
