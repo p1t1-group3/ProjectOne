@@ -63,10 +63,10 @@ function renderProducts () {
     Products.forEach(function(product, index) {
 
         productHtml = `<div id="product${index}" class="col product">
-        <span class="productTitle">${product.title}</span>
+        <span class="productTitle" >${product.title}</span>
         <img class="productImg" src="${product.imgUrl}">
         <div class="productDetails">
-            <Span class="productPrice">$${product.price}</Span>
+            <Span class="productPrice">$${product.price}.00</Span><br>
             <button data-index="${index}" class="btn btn-secondary productbutton">Order</button>
         </div>
     </div>`
@@ -257,10 +257,10 @@ function createOrderItemElement(title, price, imgUrl, quantity) {
                     <img class="orderItemImg" src="${imgUrl}" width="50" height="50">
                     <span class="orderItemTitle">${title}</span>
                 </div>
-                    <span class="itemPrice orderColumn">${price}</span>
+                    <span class="itemPrice orderColumn">$${price}.00</span>
                 <div class="orderQuantity orderColumn">
                     <input class="orderQuantityInput" type="number" value="${quantity}">
-                    <button class="btn btn-danger" type="button">remove</button>
+                    <button class="btn-danger" type="button">🛇</button>
                 </div>`       
     itemRow.innerHTML = orderRowContents
     // orderItems.append(orderRow)
@@ -268,3 +268,49 @@ function createOrderItemElement(title, price, imgUrl, quantity) {
     itemRow.getElementsByClassName('orderQuantityInput')[0].addEventListener('change', quantityChanged)
     return itemRow;
 }
+
+
+
+
+
+
+let Products = [
+{
+    imgUrl: 'https://images.pexels.com/photos/8165239/pexels-photo-8165239.jpeg',
+    title: 'Cheese',
+    quantity: 1,
+    price: 25
+},
+{
+    imgUrl:'https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    title:'Pepperoni',
+    quantity: 1,
+    price:  28
+},
+{
+    imgUrl: 'https://images.pexels.com/photos/2471171/pexels-photo-2471171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    title: 'Margarita',
+    quantity: 1,
+    price: 28
+},
+{
+    imgUrl: 'https://media.istockphoto.com/id/1330984367/photo/soft-and-chewy-parmesan-garlic-knots.jpg?s=2048x2048&w=is&k=20&c=0n_Pdiz__d98DfcVe45fWAgrE3IPwIFs2o7vCcnDSNk=',
+    title:'Garlic Knots',
+    quantity: 1,
+    price: 15
+},
+{
+    imgUrl:'https://images.pexels.com/photos/230325/pexels-photo-230325.jpeg',
+    title:'Cookies',
+    quantity: 1,
+    price: 5
+},
+{
+    imgUrl: 'https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg',
+    title:'Drinks',
+    quantity: 1,
+    price: 8
+}
+]
+
+renderProducts();
