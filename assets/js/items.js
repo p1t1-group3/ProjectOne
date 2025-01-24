@@ -39,11 +39,11 @@ function renderHistory() {
   let ordersElement = document.getElementById("orders");
 
   tableHtml = `
-    <table class="historyTable">
+    <table class="tableHistory">
                 <tr>
-                    <th>Order</th>
-                    <th>Items</th>
-                    <th>Total</th>
+                    <th class="history historyHeader">Order</th>
+                    <th class="history historyHeader">Items</th>
+                    <th class="history historyHeader">Total</th>
                 </tr>
     
     `;
@@ -56,9 +56,9 @@ function renderHistory() {
     orderHtml = `
         
         <tr>
-            <td class="historyIndex">${order.orderNumber}</td>        
-            <td class="historyItems">${itemsText.join(', ')}</td>       
-            <td class="historyTotal">${order.total.toFixed(2)}</td>
+            <td class="history historyOrder">${order.orderNumber}</td>        
+            <td class="history historyItems">${itemsText.join(', ')}</td>       
+            <td class="history historyTotal">${order.total.toFixed(2)}</td>
         </tr>
         
         `;
@@ -71,3 +71,4 @@ function renderHistory() {
   ordersElement.innerHTML = tableHtml;
 }
 
+addOrderItems();

@@ -19,7 +19,7 @@ body {
 }
 
 main {
-    margin-top: 100px;
+    margin-top: 200px;
 }
 
 #logo{
@@ -340,5 +340,22 @@ p{
  }
 
  table, th, td {
-    border:1px solid black;
+    margin-top: 5em;
+    padding: 1em;
+    border:1px solid white;
+    -webkit-text-stroke: black;
+  }
+
+  .history {
+    font-size: 3em;
+    padding: 0;
+    margin: 0;
+    color: black;
+    -webkit-text-stroke: 1px white;
+    
+  }
+
+  .tableHistory {
+    width: 100%;
+    
   }
