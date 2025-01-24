@@ -340,7 +340,7 @@ p{
  }
 
  table, th, td {
-    margin-top: 5em;
+    margin-top: 10em;
     padding: 1em;
     border:1px solid white;
     -webkit-text-stroke: black;
