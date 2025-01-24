@@ -9,10 +9,16 @@ body {
     background-color: grey;
     color: rgb(236, 236, 239);
     line-height: 1.6;
+    height: 100vh;
+    overflow: auto;
+}
+
+main {
+    margin-top: 100px;
 }
 
 .navbar {
-    position: sticky;
+    position: fixed;    
     top: 0;
     background-color: rgb(160, 124, 124);
     align-items: center;
@@ -21,6 +27,7 @@ body {
     padding: 1%;
     border-bottom-style: solid;
     border-color: blue;
+    width: 100%;
 }
 .check{
     position: fixed;
