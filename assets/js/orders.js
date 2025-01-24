@@ -36,6 +36,13 @@ let Products = [
                 price: 15.00
             },
             {
+                imgUrl:'https://images.pexels.com/photos/230325/pexels-photo-230325.jpeg',
+                title:'cookies',
+                quantity: 1,
+                price: 5.00
+            
+            },
+            {
                 imgUrl: 'https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg',
                 title:'Drink',
                 quantity: 1,
@@ -89,6 +96,7 @@ function renderOrder () {
     })
     document.querySelector('.orderTotalPrice').textContent = `$${(order.total).toFixed(2)}`
     document.querySelector('.orderTax').textContent = `$${(order.tax).toFixed(2)}`
+    document.querySelector('.orderTip').textContent = `$${(order.tip).toFixed(2)}`
 }
 
 function ready() {
@@ -227,14 +235,17 @@ function calculateTotalsTaxes() {
     
     // Calculate tax (10%)
     let tax = itemTotal * 0.10;
-    
+
+    // calculate tip (15%)
+    let tip = itemTotal * 0.15;
+
     // Calculate total
-    let total = itemTotal + tax;
+    let total = itemTotal + tax + tip;
     
     // Update the order object
     order.itemTotal = itemTotal;
     order.tax = tax;
-    
+    order.tip = tip;
     order.total = total;
     
     // Save the updated order to localStorage
@@ -243,7 +254,7 @@ function calculateTotalsTaxes() {
     // Update the UI
     document.querySelector('.orderTotalPrice').textContent = `$${total.toFixed(2)}`;
     document.querySelector('.orderTax').textContent = `$${tax.toFixed(2)}`;
-    
+    document.querySelector('.orderTip').textContent = `$${tip.toFixed(2)}`;
 }
 
 // Call the function to ensure the calculations are done
