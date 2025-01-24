@@ -1,47 +1,33 @@
-function addOrderItems() {
-    const orders = document.getElementById('orders');
-    const orderLog = JSON.parse(localStorage.getItem('orderLog'));
+document.addEventListener('DOMContentLoaded', function() {
+    addOrderItems();
+});
 
-    if (!orderLog || orderLog.length === null) {
-        orders.appendChild('No orders found');
+function addOrderItems() {
+    let ordersElement = document.getElementById('orders');
+    
+    // Retrieve the orders array from localStorage
+    let orders = JSON.parse(localStorage.getItem('orders')) || [];
+
+    // Check if ordersElement exists
+    if (!ordersElement) {
+        console.error("ordersElement is null");
         return;
     }
-    
-    for (i=0; i<orderLog.length; i++){
-    const orderItem = orderLog[i];
-    const orderLine = document.createElement('p');
-    orderLine.innerText = `Order # ${i+1}: Amount: ${orderLog[i]}`;
-    orders.appendChild(orderLine);
-    console.log(orderLine);
-}
-}
 
-addOrderItems();
+    // Clear previous content
+    ordersElement.innerHTML = '';
 
-/*let Products = [
-{
-    imgUrl: 'https://images.pexels.com/photos/8165239/pexels-photo-8165239.jpeg',
-    title: 'cheese',
-    price: 25.00
-},
-{
-    imgUrl:'https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    title:'pepperoni',
-    price:  28.00
-},
-{
-     imgUrl: 'https://images.pexels.com/photos/2471171/pexels-photo-2471171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    title: 'margarita',
-    price: 28.00
-},
-{
-     imgUrl: 'https://media.istockphoto.com/id/1330984367/photo/soft-and-chewy-parmesan-garlic-knots.jpg?s=2048x2048&w=is&k=20&c=0n_Pdiz__d98DfcVe45fWAgrE3IPwIFs2o7vCcnDSNk=',
-    title:'knots',
-    price: 15.00
-},
-{
-     imgUrl: 'https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg',
-    title:'drink',
-    price: 8.00
-},
-]
+    // Display each order
+    if (orders.length === 0) {
+        let noOrdersMessage = document.createElement('p');
+        noOrdersMessage.innerText = 'No orders found';
+        ordersElement.appendChild(noOrdersMessage);
+    } else {
+        orders.forEach(order => {
+            let itemsText = order.items.map(item => `${item.quantity} x ${item.title} ($${item.price})`).join(', ');
+            let orderLine = document.createElement('p');
+            orderLine.innerText = `Order #${order.orderNumber}: Total: $${order.total.toFixed(2)}, Items: ${itemsText}, Tax: $${order.tax.toFixed(2)}`;
+            ordersElement.appendChild(orderLine);
+        });
+    }
+}

@@ -12,12 +12,15 @@ body {
 }
 
 .navbar {
+    position: sticky;
+    top: 0;
     background-color: rgb(160, 124, 124);
     align-items: center;
     justify-content: space-between;
     align-items: center;
     padding: 1%;
-    
+    border-bottom-style: solid;
+    border-color: blue;
 }
 .check{
     position: fixed;
@@ -29,8 +32,14 @@ h2, p {
     text-align: center;
     padding: 1em;
 }
-
+h2{
+    border-style: double;
+    border-color: blue;
+    
+    text-shadow: 1px 1px 1px azure;
+}
 .product{
+    display: grid;
     border-style: solid;
     border-color: white;
     border-width: 1px;
@@ -39,18 +48,29 @@ h2, p {
 }
 
 .productTitle {
+    font-size: larger;
     border-style: solid;
-    border-color: white;
+    border-color: blue;
+    color:azure;
     border-width: 1px;
-    padding: 2px;
+    padding: 1em;
+    margin: 1em;
 }
 .productImg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
     height: 200px;
     width: 200px;
 }
+.productPrice{
+    color:azure;
+}
 .productButton{
     bottom: 5px;
-    
 }
 
 .productDetails{
@@ -89,9 +109,10 @@ h2, p {
 }
 
 .orderItemTitle {
+    
     color: blue;
-    margin-left: .5em;
-    font-size: 1.2em;
+    margin-left: 2px;
+    
 }
 
 .orderItemImg {
@@ -100,11 +121,13 @@ h2, p {
     border-radius: 10px;
 }
 .btn-danger {
-    color: white;
-    background-color: #EB5757;
+    height: 35px;
+    width: 40px;
+    background-color: blue;
+    color: azure;
+    border-radius: 5px;
     border: none;
-    border-radius: .3em;
-    font-weight: bold;
+    
 }
 
 .btn-danger:hover {
@@ -112,12 +135,11 @@ h2, p {
 }
 
 .orderQuantityInput {
-    height: 34px;
-    width: 50px;
+    height: 35px;
+    width: 40px;
     border-radius: 5px;
-    border: 1px solid white;
-    background-color: grey;
-    color: blue;
+    border: 1px solid blue;
+    background-color: white;
     padding: 0;
     text-align: center;
     font-size: 1.2em;
@@ -165,7 +187,7 @@ h2, p {
 
 .navbar h1 {
     
-    text-shadow: 1px 1px 1px white;
+    text-shadow: 1px 1px 1px tomato;
     
 }
 
@@ -176,11 +198,14 @@ h2, p {
     
 }
 
-#local {
-    /* justify-content: center; */
+p{
+    color: azure;
 }
 
 .locPizza {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     border-style: solid;
     border-color: white;
     border-width: 1px;
@@ -188,18 +213,19 @@ h2, p {
 }
 
 .hero {
-    height: 80vh;
+    display: block;
+    margin: auto;
+    height: 50vh;
+    width: 50vh;
     display: flex;
-    /* padding: 2em; */
+   
 }
 
 .modal-dialog { /* This is the Text at the top of the modal*/
     color: gray;
 }
 
-.modal-content {
-    
-}
+
 .jersey-15-regular {
     font-family: "Jersey 15", serif;
     font-weight: 400;
