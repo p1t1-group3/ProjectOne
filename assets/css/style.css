@@ -1,6 +1,6 @@
- html, body{
+ /* html, body{
     height: 100%;
- }
+ } */
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -237,6 +237,14 @@ p{
     background-size:  90% 90%;
     background-position: center;
     
-    
-    
+     
   }
+ .carousel-inner{
+    height: 400px;
+ }
+ .carImg{
+    width:640px;
+    height:468px;
+    object-fit: cover;
+    filter:brightness(0.6);
+ }
