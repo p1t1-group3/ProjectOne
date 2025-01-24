@@ -36,6 +36,13 @@ let Products = [
                 price: 15.00
             },
             {
+                imgUrl:'https://images.pexels.com/photos/230325/pexels-photo-230325.jpeg',
+                title:'cookies',
+                quantity: 1,
+                price: 5.00
+            
+            },
+            {
                 imgUrl: 'https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg',
                 title:'Drink',
                 quantity: 1,

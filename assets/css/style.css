@@ -1,25 +1,6 @@
- html, body{
+ /* html, body{
     height: 100%;
- }
-
- #logo:hover{
-    animation: shake 0.5s;
-    animation-iteration-count: infinite;
-}
-
-@keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
-  }
+ } */
 
 body {
     font-family: "Poppins", sans-serif;
@@ -33,6 +14,12 @@ body {
     background-color: black;
     color: rgb(236, 236, 239);
     line-height: 1.6;
+    height: 100vh;
+    overflow: auto;
+}
+
+main {
+    margin-top: 100px;
 }
 
 #logo{
@@ -58,6 +45,7 @@ body {
 .navbar {
     position: sticky;
     margin-left: 0px;
+    position: fixed;    
     top: 0;
     text-shadow: 10px, 5px, 03px, goldenrod;
     /* justify-content: center; */
@@ -107,6 +95,10 @@ body {
     
 }
 
+    border-bottom-style: solid;
+    border-color: blue;
+    width: 100%;
+}
 .check{
     position: fixed;
     bottom: 5px;
@@ -332,27 +324,17 @@ p{
   .hero{
     background-image: url('../images/restaurantbgimg.jpg');
     background-repeat: no-repeat;
-    background-size:  90% 90%; 
-     background-position: center; 
-  
+    background-size:  90% 90%;
+    background-position: center;
+    
+     
   }
-
-  /* .text-center{
-    font-size: 80px;
-  } */
-
-  #aboutParagraph{
-    font-size: 80px;
-  }
-
-  #aboutTitle{
-    font-size: 80px;
-  }
-
-  #local{
-    font-size: 50px;
-  }
-
-  #contact{
-    font-size: 50px;
-  }
+ .carousel-inner{
+    height: 400px;
+ }
+ .carImg{
+    width:640px;
+    height:468px;
+    object-fit: cover;
+    filter:brightness(0.6);
+ }
