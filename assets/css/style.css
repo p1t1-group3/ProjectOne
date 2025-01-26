@@ -1,361 +1,354 @@
- /* html, body{
+/* html, body{
     height: 100%;
  } */
 
 body {
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('../images/pizzabackground.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: black;
-    color: rgb(236, 236, 239);
-    line-height: 1.6;
-    height: 100vh;
-    overflow: auto;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/pizzabackground.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: black;
+  color: rgb(236, 236, 239);
+  line-height: 1.6;
+  height: 100vh;
+  overflow: auto;
 }
 
 main {
-    margin-top: 200px;
+  margin-top: 200px;
 }
 
-#logo{
-    overflow: hidden;
-    /* background-image: url("../images/LOGO2.png"); */
-    background-repeat: no-repeat;
-    height: 210px;
-    margin-left: 50px;
+#logo {
+  overflow: hidden;
+  /* background-image: url("../images/LOGO2.png"); */
+  background-repeat: no-repeat;
+  height: 210px;
+  margin-left: 50px;
 }
 
-.pizzaLogo{
-    align-items: center;
-    justify-content: center;
-    align-content: center;
+.pizzaLogo {
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 }
 
-
-
- #userSignUp{
-    margin-right: 1px;
-    padding-right: 0;
- }
+#userSignUp {
+  margin-right: 1px;
+  padding-right: 0;
+}
 .navbar {
-    position: sticky;
-    margin-left: 0px;
-    position: fixed;    
-    top: 0;
-    text-shadow: 10px, 5px, 03px, goldenrod;
-    /* justify-content: center; */
-    padding: 1%;
-   
+  text-shadow: 10px, 5px, 03px, goldenrod;
+  padding: 1%;
+  background-color: olive;
 }
 
-.bootCampPizza{
-    margin-left: 0;
+.bootCampPizza {
+  margin-left: 0;
 }
 
-#userSignUP{
-    background-color: #2c3338;
-    font-size: 30px;
+#userSignUP {
+  background-color: #2c3338;
+  font-size: 30px;
 }
 
-#homeB{
-    background-color: #2c3338;
-    font-size: 30px;
+#homeB {
+  background-color: #2c3338;
+  font-size: 30px;
 }
 
-#aboutB{
-    background-color: #2c3338;;
-    font-size: 30px;
-    
+#aboutB {
+  background-color: #2c3338;
+  font-size: 30px;
 }
 
-#orderOn{
-    background-color: #2c3338;
-    font-size: 30px;
-    
+#orderOn {
+  background-color: #2c3338;
+  font-size: 30px;
 }
 
-#userSignUP:hover{
-    background-color: red;
-    font-size: 30px;
+#userSignUP:hover {
+  background-color: red;
+  font-size: 30px;
 }
 
-#homeB:hover{
-    background-color: red;
-    font-size: 30px;
+#homeB:hover {
+  background-color: red;
+  font-size: 30px;
 }
 
-#aboutB:hover{
-    background-color: red;
-    font-size: 30px;
-    
+#aboutB:hover {
+  background-color: red;
+  font-size: 30px;
 }
 
-    border-bottom-style: solid;
-    border-color: blue;
-    width: 100%;
-}
-.check{
-    position: fixed;
-    bottom: 5px;
-    right: 5px;
+.check {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
 }
 
-h1{
-    font-family:fantasy;
-    text-shadow: 15px,07px,11px,goldenrod;
-    font-size: 50px;
+h1 {
+  font-family: fantasy;
+  text-shadow: 15px, 07px, 11px, goldenrod;
+  font-size: 50px;
 }
 
-h2, p {
-    text-align: center;
-    padding: 1em;
-    box-shadow: #CC4C4C;
-    
+h2,
+p {
+  text-align: center;
+  padding: 1em;
+  box-shadow: #cc4c4c;
 }
 
-h2{
-    /* border-style: double; */
-    /* border-color: black; */
-    text-shadow: 1px 1px 1px azure;
+h2 {
+  text-shadow: 1px 1px 1px azure;
 }
-.product{
-    display: grid;
-    border-style: solid;
-    border-color: white;
-    border-width: 1px;
-    background-color;
-    padding: 1em;
+.product {
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
 }
 
 .productTitle {
-    font-size: larger;
-    border-style: solid;
-    border-color: black;
-    color:azure;
-    border-width: 1px;
-    padding: 1em;
-    margin: 1em;
+  font-size: larger;
+  color: azure;
+  border-width: 1px;
+  padding: 1em;
+  margin: 1em;
 }
-.productImg{
-    display:block
-    margin-left: auto;
-    margin-right: auto;
-    border-style: solid;
-    border-color: #A52A2A;
-    border-radius: 15px;
-    border-width: 2px;
-    height: 400px;
-    width: 400px;
+.productImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-color: #a52a2a;
+  border-radius: 15px;
+  border-width: 2px;
+  height: 350px;
+  width: 350px;
 }
-.productPrice{
-    color:azure;
+.productPrice {
+  color: azure;
 }
-.productButton{
-    bottom: 5px;
+.productButton {
+  bottom: 5px;
 }
 
-.productDetails{
-    padding: 1em;
+.productDetails {
+  padding: 1em;
 }
 
-.orderColumn{
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid black;
-    margin-right: 1.5em;
-    padding-bottom: 10px;
-    margin-top: 10px;
+.orderColumn {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+  margin-right: 1.5em;
+  padding-bottom: 10px;
+  margin-top: 10px;
 }
-.orderRow{
-    display: flex;
+.orderRow {
+  display: flex;
 }
 
 .orderItem {
-    width: 45%;
-    font-size: 1.2em;
-    color: blue;
+  width: 45%;
+  font-size: 1.2em;
+  color: blue;
 }
 
-
 .orderPrice {
-    width: 20%;
-    font-size: 1.2em;
-    color: blue;
+  width: 20%;
+  font-size: 1.2em;
+  color: blue;
 }
 
 .orderQuantity {
-    width: 35%;
-    font-size: 1.2em;
-    color: blue;
+  width: 35%;
+  font-size: 1.2em;
+  color: blue;
 }
 
 .orderItemTitle {
-    
-    color: blue;
-    margin-left: 2px;
-    
+  color: blue;
+  margin-left: 2px;
 }
 
 .orderItemImg {
-    width: 75px;
-    height: auto;
-    border-radius: 10px;
+  width: 75px;
+  height: auto;
+  border-radius: 10px;
 }
 .btn-danger {
-    height: 35px;
-    width: 40px;
-    background-color: blue;
-    color: azure;
-    border-radius: 5px;
-    border: none;
-    
+  height: 35px;
+  width: 40px;
+  background-color: blue;
+  color: azure;
+  border-radius: 5px;
+  border: none;
 }
 
 .btn-danger:hover {
-    background-color: #CC4C4C;
+  background-color: #cc4c4c;
 }
 
 .orderQuantityInput {
-    height: 35px;
-    width: 40px;
-    border-radius: 5px;
-    border: 1px solid blue;
-    background-color: white;
-    padding: 0;
-    text-align: center;
-    font-size: 1.2em;
-    margin-right: 25px;
+  height: 35px;
+  width: 40px;
+  border-radius: 5px;
+  border: 1px solid blue;
+  background-color: white;
+  padding: 0;
+  text-align: center;
+  font-size: 1.2em;
+  margin-right: 25px;
 }
 
-   
 .orderRow:last-child {
-    border-bottom: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .orderRow:last-child .orderColumn {
-    border: none;
+  border: none;
 }
 
-#tip{
-    height: 34px;
-    width: 75px;
-    border-radius: 5px;
-    border: 1px solid white;
-    background-color: grey;
-    color: blue;
-    padding: 0;
-    text-align: center;
-    font-size: 1.2em;
-    margin-right: 25px;
+#tip {
+  height: 34px;
+  width: 75px;
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: grey;
+  color: blue;
+  padding: 0;
+  text-align: center;
+  font-size: 1.2em;
+  margin-right: 25px;
 }
 
 .orderTotal {
-    text-align: end;
-    margin-top: 10px;
-    margin-right: 10px;
+  text-align: end;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 .orderTotalTitle {
-    font-weight: bold;
-    font-size: 1.5em;
-    color: black;
-    margin-right: 20px;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: black;
+  margin-right: 20px;
 }
 .orderTotalPrice {
-    color: blue;
-    font-size: 1.1em;
+  color: blue;
+  font-size: 1.1em;
 }
 
 .navbar h1 {
-    
-    text-shadow: 1px 1px 1px tomato;
-    
+  text-shadow: 1px 1px 1px tomato;
 }
- .productbutton:hover{
-    background-color: green;
-    width:100px;
-
- }
-.btn  {
-    font-style: italic;
-    background-color: blue;
-    color: white;
-    
+.productbutton:hover {
+  background-color: green;
+  width: 100px;
+}
+.btn {
+  font-style: italic;
+  background-color: blue;
+  color: white;
 }
 
-p{
-    color: azure;
+p {
+  color: azure;
 }
 
 .locPizza {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: solid;
-    border-color: white;
-    border-width: 1px;
-    
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
 }
 
 .hero {
-    display: block;
-    margin: auto;
-    height: 50vh;
-    width: 50vh;
-    display: flex;
-   
+  display: block;
+  margin: auto;
+  height: 50vh;
+  width: 50vh;
+  display: flex;
 }
 
-.modal-dialog { /* This is the Text at the top of the modal*/
-    color: gray;
+.modal-dialog {
+  /* This is the Text at the top of the modal*/
+  color: gray;
 }
-
 
 .jersey-15-regular {
-    font-family: "Jersey 15", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  .hero{
-    background-image: url('../images/restaurantbgimg.jpg');
-    background-repeat: no-repeat;
-    background-size:  90% 90%;
-    background-position: center;
-    
-     
-  }
- .carousel-inner{
-    height: 400px;
- }
- .carImg{
-    width:640px;
-    height:468px;
-    object-fit: cover;
-    filter:brightness(0.6);
- }
+  font-family: "Jersey 15", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.hero {
+  background-image: url("../images/restaurantbgimg.jpg");
+  background-repeat: no-repeat;
+  background-size: 90% 90%;
+  background-position: center;
+}
+.carousel-inner {
+  height: 400px;
+}
+.carImg {
+  width: 640px;
+  height: 468px;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
 
- table, th, td {
-    margin-top: 10em;
-    padding: 1em;
-    border:1px solid white;
-    -webkit-text-stroke: black;
-  }
+table,
+th,
+td {
+  margin-top: 10em;
+  padding: 1em;
+  border: 1px solid white;
+  -webkit-text-stroke: black;
+}
 
-  .history {
-    font-size: 3em;
-    padding: 0;
-    margin: 0;
-    color: black;
-    -webkit-text-stroke: 1px white;
-    
-  }
+.history {
+  font-size: 3em;
+  padding: 0;
+  margin: 0;
+  color: black;
+  -webkit-text-stroke: 1px white;
+}
 
-  .tableHistory {
-    width: 100%;
-    
+.tableHistory {
+  width: 100%;
+}
+#loginBox {
+  display: flex;
+  padding: 1em;
+  width: 400px;
+  border: 1px solid white;
+  border-radius: 12px;
+}
+#loginBtn {
+  position: flex;
+}
+#loginBtn:hover {
+  background-color: green;
+  width: 100px;
+}
+@media only screen and (max-width: 991.98px) {
+  .productImg {
+    height: 150px;
+    width: 150px;
   }
+}
+
+@media only screen and (max-width: 575.98px) {
+  .productImg {
+    height: 100px;
+    width: 100px;
+  }
+}
