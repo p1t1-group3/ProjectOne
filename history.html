@@ -10,29 +10,35 @@
     
 </head>
 <body>
-    <nav class="navbar sticky-top">
-        <form class="container-fluid">
-            <!--doubles as home button-->
+    <nav class="navbar"> 
+
         <div id="logo">
             <a href="index.html">
                 <img class="pizzaLogo" src="../ProjectOne/assets/images/LOGO3.png" alt="pizza man logo" width="200"/>
             </a>
         </div>
-        <div class="navButtons">
+
+        <!-- <h1 class="bootCampPizza">Boot camp pizza</h1> -->
+        <!-- Button trigger modal -->
+
         <button id="userSignUP" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@signUP">Sign up</button>
         
+        
+
+        <!-- dends to home if not there -->
+        <button  id="homeB"  class = "btn" href =>Home</button>
         <!-- sends to about page -->
-        <button id="aboutB" class = "btn userSign">About</button>
+        <button id="aboutB" class = "btn" href =>About</button>
         
         <!-- offcanvas for order -->
-        <button id="orderOn" type="button" class="btn userSign" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"> Order Online </button>
-        <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <button id="orderOn" type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"> Order Online </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasRightLabel">Order</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                <section class="container contentSection">
-                </div>  
-            </section>
+              <h5 class="offcanvas-title" id="offcanvasRightLabel">Order</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              <section class="container contentSection">
+      </div>  
+      </section>
             <div class="offcanvas-body">
                 <div class="orderRow">
                     <span class="orderItem orderheader orderColumn">Item</span>
@@ -44,24 +50,19 @@
                 <div class="orderTotal">
                     <h6 class="orderTaxTitle">Sales tax</h6> 
                     <span class="orderTax">$0</span><br>
-                    <h6 class="orderTipTitle">Recommended Tip</h6> 
-                    <span class="orderTip">$0</span><br>
                     <strong class="orderTotalTitle">Total</strong>
                     <span class="orderTotalPrice">$0</span>
                 </div>
-                <button type="button" class="btn check" data-bs-dismiss="offcanvas">Checkout</button>
-            </div>  
-        </div>
+                <button type="button" class="btn check">Checkout</button>
+              </div>  
             </div>
           </div>
-        </form>
     </nav>
     <section  class="orderHistory">   
         <H2>Order History</H2>     
         <div id="orders" class="container-fluid">
             
           </div>
-          <button id="logoutBtn" class="btn btn-secondary">Logout</button>
     </section>
     
     <footer>
@@ -69,6 +70,7 @@
         
     </footer>
 
+    <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -77,41 +79,32 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="signUp"id="customerInfo">
-                        <div class="form-floating mb-3">
-                            <input type="name" class="customer-name form-control" id="floatingInput" placeholder="Name">
-                            <label for="floatingInput">Name</label>
-                          </div>
-                        <div class="form-floating mb-3">
-                            <input type="email" class="customer-email form-control" id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput">Email address</label>
-                          </div>
-                          <div class="form-floating mb-3">
-                            <input type="Address" class="customer-address form-control" id="floatingInput" placeholder="Address">
-                            <label for="floatingInput">Address</label>
-                          </div>
-                          <div class="form-floating mb-3">
-                            <input type="number" class="customer-number form-control" id="floatingInput" placeholder="Phone number">
-                            <label for="floatingInput">Phone number</label>
-                          </div>
-                          <div class="form-floating">
-                            <input type="password" class="inputPassword form-control" id="floatingPassword" placeholder="Password">
-                            <label for="floatingPassword">Password</label>
-                          </div>
+                    <form action=""id="customerInfo">
+                        <!-- <input type="text"><span class="customer-name"></span> -->
+        <label for="customer-name">Name:</label>
+        <input type="text" class="customer-name form-control" name="customer-name"><br>
+        <label for="customer-email">Email:</label>
+        <input type="email" class="customer-email form-control" name="customer-email"><br>
+        <label for="customer-number">Phone Number:</label>
+        <input type="text" class="customer-number form-control" name="customer-number"><br>
+        <label for="customer-address">Address:</label>
+        <input type="text" class="customer-address form-control" name="customer-address"><br>
+        <label for="inputPassword" class="col-form-label">Password</label>
+        <input type="password" class="inputPassword form-control" name="customer-password">
          <p id="passwordHelpInline" class="form-text">
             Must be 8-20 characters long.
           </p>
-        <a href="login.html">login</a>
+        
         </form>
         </div>
                 <div class="modal-footer">
-                    
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary" id="acceptBtn" data-bs-dismiss="modal">Accept</button>
                 </div>
             </div>
         </div>
     </div>
+
     <script src="./assets/js/orders.js"></script>
     <script src="./assets/js/items.js"></script>
 </body>

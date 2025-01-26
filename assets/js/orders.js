@@ -36,13 +36,6 @@ let Products = [
                 price: 15.00
             },
             {
-                imgUrl:'https://images.pexels.com/photos/2759135/pexels-photo-2759135.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                title:'Cookies',
-                quantity:1,
-                price: 5.00
-
-            },
-            {
                 imgUrl: 'https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg',
                 title:'Drink',
                 quantity: 1,
@@ -70,7 +63,7 @@ function renderProducts () {
 
     Products.forEach(function(product, index) {
 
-        productHtml = `<div id="product${index}" class="col container-fluid product">
+        productHtml = `<div id="product${index}" class="col product">
         <span class="productTitle" >${product.title}</span>
         <img class="productImg" src="${product.imgUrl}">
         <div class="productDetails">
