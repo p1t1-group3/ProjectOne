@@ -54,11 +54,11 @@ acceptBtn.addEventListener('click',function(event){
 
 
 // Added link to Home Page
-homeBtn.addEventListener('click',function(event){
-  event.preventDefault();
+// homeBtn.addEventListener('click',function(event){
+//   event.preventDefault();
 
-  window.location.assign('index.html');
-});
+//   window.location.assign('index.html');
+// });
 
 // Added link to About Page
 aboutBtn.addEventListener('click',function(event){

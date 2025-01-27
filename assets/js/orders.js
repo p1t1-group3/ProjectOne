@@ -154,6 +154,13 @@ function checkoutClicked(event) {
     // Update the UI
     calculateTotalsTaxes();
     renderOrder();
+
+
+    if (document.getElementById('orders')) {
+        renderHistory();
+    } else {
+        console.warn('Order History table not found.');
+    }
 }
 
 function removeOrderItem(event) {
