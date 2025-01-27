@@ -1,19 +1,19 @@
 const signUp = document.getElementById("signUpModal")
 // const order = document.getElementById("orderModal")
-const produce = document.getElementById("product")
-const pizzamenu = document.getElementById("menu")
- const modalBodyEls= document.getElementsByClassName('modal-body');
-const customerName = document.querySelector('.customer-name');
+//const produce = document.getElementById("product")
+//const pizzamenu = document.getElementById("menu")
+//const modalBodyEls= document.getElementsByClassName('modal-body');
 const signUpBtn = document.querySelector('#userSignUP');
 const customerInformation  = document.querySelector('#customerInfo');
+const customerName = document.querySelector('.customer-name');
 const customerEmail  = document.querySelector('.customer-email');
 const customerNumber  = document.querySelector('.customer-number');
 const customerAddress  = document.querySelector('.customer-address');
 const signUPModalBtn = document.querySelector('#userSignUP');
 const acceptBtn = document.getElementById('acceptBtn');
-const homeBtn = document.getElementById('homeB');
+//const homeBtn = document.getElementById('homeB');
 const aboutBtn = document.getElementById('aboutB');
-const loginBtn = document.getElementById('userLogin')
+//const loginBtn = document.getElementById('userLogin')
 let UpdatedInfo = JSON.parse(localStorage.getItem('customerInfo'));
 
 
@@ -25,7 +25,7 @@ function updateSignUpButton(){
     document.getElementById('userSignUP').textContent = UpdatedInfo.Name + `'s Order History`;
     document.getElementById('userSignUP').style.fontSize = 'inhert';   
     signUPModalBtn.addEventListener('click',function(event){
-      window.location.href = 'history.html';
+      window.location.href = 'oHistory.html';
       // If they have their name saved in local storage, then the Sign Up button changes to a link to their Order History
     })  
   } else {
@@ -52,15 +52,6 @@ acceptBtn.addEventListener('click',function(event){
 
 });
 
-
-// Added link to Home Page
-// homeBtn.addEventListener('click',function(event){
-//   event.preventDefault();
-
-//   window.location.assign('index.html');
-// });
-
-// Added link to About Page
 aboutBtn.addEventListener('click',function(event){
   event.preventDefault();
 
