@@ -71,9 +71,10 @@ function renderProducts () {
 
     Products.forEach(function(product, index) {
 
-        productHtml = `<div id="product${index}" class="col container-fluid product">
+        productHtml = `<div id="product${index}" class="productDiv col container-fluid product" 
+        style="background-image: url('${product.imgUrl}');">
         <span class="productTitle" >${product.title}</span>
-        <img class="productImg" src="${product.imgUrl}">
+        <!-- <img class="productImg" src="${product.imgUrl}"> -->
         <div class="productDetails">
             <Span class="productPrice">$${product.price}.00</Span><br>
             <button data-index="${index}" class="btn btn-secondary productbutton">Order</button>
