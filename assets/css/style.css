@@ -1,4 +1,3 @@
-
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -8,7 +7,6 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
-  
   color: rgb(236, 236, 239);
   line-height: 1.6;
   height: 100vh;
@@ -16,17 +14,14 @@ body {
 }
 
 main {
-  
   margin-top: 50px;
-  
 }
 
-.products{
+.products {
   align-items: center;
 }
 
 #logo {
- 
   overflow: hidden;
   background-repeat: no-repeat;
   height: 210px;
@@ -47,45 +42,39 @@ main {
   justify-content: center;
 }
 
-
 .navbar {
   padding: 1%;
-  background-color:rgba(1, 29, 19,0.8);
+  background-color: rgba(1, 29, 19, 0.8);
 }
 
- 
-.navBtn{
+.navBtn {
   display: flexbox;
   font-size: 25px;
 }
+
 .bootCampPizza {
   margin-left: 0;
 }
+
 #userSignUP {
   margin-right: 1px;
-
   background-color: #2c3338;
-  
 }
 
 #homeB {
   background-color: #2c3338;
-  
 }
 
 #aboutB {
   background-color: #2c3338;
-  
 }
 
 #orderOn {
   background-color: #2c3338;
-  
 }
 
 #userSignUP:hover {
   background-color: red;
-  
 }
 
 #homeB:hover {
@@ -121,20 +110,17 @@ h2 {
   text-shadow: 1px 1px 1px azure;
 }
 .product {
-   
   border-style: solid;
   border-color: white;
-  border-width: 1px;;
-  background-size:cover;
-  
-     
+  border-width: 1px;
+  background-size: cover;
 }
 
 .productTitle {
   font-size: 5vh;
-  color: white; 
+  color: white;
   border-width: 1px;
-  background-color:rgba(128, 101, 91, 0.7);
+  background-color: rgba(128, 101, 91, 0.7);
 }
 .productImg {
   display: block;
@@ -155,7 +141,7 @@ h2 {
 .productPrice {
   font-size: 2em;
   color: white;
-  background-color:rgba(128, 101, 91, 0.7);
+  background-color: rgba(128, 101, 91, 0.7);
 }
 .productButton {
   bottom: 5px;
@@ -168,7 +154,6 @@ h2 {
 .orderColumn {
   display: flex;
   align-items: center;
-  
   margin-right: 1.5em;
   padding-bottom: 10px;
   margin-top: 10px;
@@ -195,9 +180,9 @@ h2 {
   font-size: 1.2em;
   color: blue;
 }
- .menu{
+.menu {
   margin-top: 5px;
- }
+}
 .orderItemTitle {
   font-size: small;
   color: blue;
@@ -261,7 +246,6 @@ h2 {
   margin-right: 10px;
 }
 
- 
 .orderTotalTitle {
   font-weight: bold;
   font-size: 1.5em;
@@ -323,15 +307,6 @@ p {
   background-size: 90% 90%;
   background-position: center;
 }
-/*.carousel-inner {
-  height: 400px;
-}
-.carImg {
-  width: 640px;
-  height: 468px;
-  object-fit: cover;
-  filter: brightness(0.6);
-}*/
 
 table,
 th,
@@ -339,8 +314,6 @@ td {
   margin-top: 10em;
   padding: 1em;
   border: 1px solid white;
- 
-  
 }
 
 .history {
@@ -348,20 +321,20 @@ td {
   padding: 0;
   margin: 0;
   color: white;
-  
-  background-color:rgba(128, 101, 91, 0.7)
+  background-color: rgba(128, 101, 91, 0.7);
 }
 
 .tableHistory {
   width: 100%;
 }
+
 #loginBox {
   display: flex;
   padding: 1em;
   width: 400px;
   border: 1px solid white;
   border-radius: 12px;
-  background-color:rgba(128, 101, 91, 0.7);
+  background-color: rgba(128, 101, 91, 0.7);
 }
 #loginBtn {
   position: flex;
@@ -375,28 +348,27 @@ td {
     width: 45%;
     height: 33%;
   }
-  
+
   .productImg {
     height: 150px;
     width: 150px;
   }
-  
+
   .productTitle {
     font-size: 3vh;
   }
-  .navBtn{
+  .navBtn {
     display: flex;
-    
   }
   table,
-th,
-td {
-  margin-top: 1em;
-  padding: 1em;
-  border: 1px solid white;
-  color: white;  
-  font-size: .75vh;
-}
+  th,
+  td {
+    margin-top: 1em;
+    padding: 1em;
+    border: 1px solid white;
+    color: white;
+    font-size: 0.75vh;
+  }
 }
 
 @media only screen and (max-width: 575.98px) {
@@ -404,45 +376,40 @@ td {
     height: 100px;
     width: 100px;
   }
-  
+
   .pizzaLogo {
     height: 15vh;
     width: 15vh;
     padding: 0;
     margin: 0;
   }
-  .navBtn{
-    display: flex; 
+  .navBtn {
+    display: flex;
     /* height: 4vh; */
     width: 20vh;
     font-size: 1.7vh;
-    
-    
   }
   .navbar {
     height: 20vh;
   }
   table,
-th,
-td {
-  margin-top: 1em;
-  padding: 1em;
-  border: 1px solid white;
-  color: white;  
-  font-size: .75vh;
+  th,
+  td {
+    margin-top: 1em;
+    padding: 1em;
+    border: 1px solid white;
+    color: white;
+    font-size: 0.75vh;
+  }
 }
 
-}
+@media only screen and (max-width < 578px) {
+  .navButtons {
+    width: 50%;
+    font-size: small;
+  }
 
-
-@media only screen and (max-width < 578px){
-.navButtons{
-  width:50%;
-  font-size: small;
+  .product {
+    width: 44%;
+  }
 }
-
-.product {
-  width: 44%;
-}
-}
-
