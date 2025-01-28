@@ -131,6 +131,10 @@ h2 {
   height: 350px;
   width: 350px;
 }
+
+.customOrder {
+    width: 100%;
+}
 .productPrice {
   color: azure;
 }
