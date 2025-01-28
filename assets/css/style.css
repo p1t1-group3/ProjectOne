@@ -238,6 +238,7 @@ h2 {
   margin-right: 10px;
 }
 
+ 
 .orderTotalTitle {
   font-weight: bold;
   font-size: 1.5em;
@@ -355,4 +356,7 @@ td {
     height: 100px;
     width: 100px;
   }
+}
+#menu{
+  margin-top: 0;
 }
