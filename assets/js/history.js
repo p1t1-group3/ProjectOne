@@ -67,7 +67,7 @@ function renderHistory() {
           <td class="history historyItems">${itemsText}</td>       
           <td class="history historyTotal">$${order.total.toFixed(2)}</td>
           <td class="history historyActions">
-            <button class="btn-order-again" data-index="${index}">Order Again</button>
+            <button class="btn btn-primary" data-index="${index}">Order Again</button>
           </td>
         </tr>
       `;

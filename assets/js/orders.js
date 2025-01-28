@@ -7,7 +7,8 @@ let order = JSON.parse(localStorage.getItem('order')) || {
     itemTotal: 0,    
     tax: 0,
     tip:0,
-    total: 0
+    total: 0,
+    notes: ''
 };
 
 let Products = [
@@ -70,13 +71,15 @@ function renderProducts () {
 
     Products.forEach(function(product, index) {
 
-        productHtml = `<div id="product${index}" class="col container-fluid product">
+        productHtml = `<div id="product${index}" class="productDiv col container-fluid product" 
+        style="background-image: url('${product.imgUrl}');">
         <span class="productTitle" >${product.title}</span>
-        <img class="productImg" src="${product.imgUrl}">
+        <!-- <img class="productImg" src="${product.imgUrl}"> -->
         <div class="productDetails">
             <Span class="productPrice">$${product.price}.00</Span><br>
             <button data-index="${index}" class="btn btn-secondary productbutton">Order</button>
         </div>
+        
     </div>`
         productsDiv.innerHTML+= productHtml;
     })
@@ -139,16 +142,20 @@ function checkoutClicked(event) {
         itemTotal: 0,
         tax: 0,
         tip: 0,
-        total: 0
+        total: 0,
+        notes: ''
     };
+    const customization = getElementById('customOrder');
+    order.notes.textContent = customization;
 
     // Save the new order to localStorage
     localStorage.setItem('order', JSON.stringify(order));
 
     // Clear the order items from the UI
-    let orderItems = document.getElementsByClassName('orderItems')[0];
+    let orderItems = document.getElementById('orderItems')[0];
     while (orderItems.hasChildNodes()) {
         orderItems.removeChild(orderItems.firstChild);
+        console.log('Removing an element');
     }
 
     // Update the UI
