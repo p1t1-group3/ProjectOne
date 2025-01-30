@@ -7,8 +7,7 @@ let order = JSON.parse(localStorage.getItem('order')) || {
     itemTotal: 0,    
     tax: 0,
     tip:0,
-    total: 0,
-    notes: ''
+    total: 0
 };
 
 let Products = [
@@ -143,10 +142,9 @@ function checkoutClicked(event) {
         tax: 0,
         tip: 0,
         total: 0,
-        notes: ''
+      
     };
-    const customization = getElementById('customOrder');
-    order.notes.textContent = customization;
+   
 
     // Save the new order to localStorage
     localStorage.setItem('order', JSON.stringify(order));
@@ -172,9 +170,8 @@ function checkoutClicked(event) {
 
 function removeOrderItem(event) {
     let buttonClicked = event.target;
-    buttonClicked.parentElement.parentElement.remove();
-
-    calculateTotalsTaxes();
+    buttonClicked.parentElement.parentElement.remove()
+    calculateTotalsTaxes()
 }
 
 function removeOrderItem(event){
@@ -268,7 +265,7 @@ function calculateTotalsTaxes() {
     // Update the UI
     document.querySelector('.orderTotalPrice').textContent = `$${total.toFixed(2)}`;
     document.querySelector('.orderTax').textContent = `$${tax.toFixed(2)}`;
-    // document.querySelector('.orderTip').textContent = `$${tip.toFixed(2)}`;
+    document.querySelector('.orderTip').textContent = `$${tip.toFixed(2)}`;
 }
 
 // Call the function to ensure the calculations are done
